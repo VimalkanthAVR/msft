@@ -1,0 +1,21 @@
+Associate ID
+
+UAN
+
+Name
+
+Gender
+
+DOB
+
+2042351
+
+101717469687
+
+VIMALKANTH A V R
+
+MALE
+
+ 
+
+27/07/2000
