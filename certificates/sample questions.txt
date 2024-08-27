@@ -1,0 +1,207 @@
+table a  and table b 
+
+id            id
+1             1
+1	      1
+1             1
+1             1
+              1
+              1
+
+What is the Output of inner, left outer, right outer and full outer join
+inner join - 28
+left join -  28
+right join - 7
+
+--------------------------------------------------------------------------
+
+list1 = list(range(1, 501))
+output = [list1[i:i+50] for i in range(0, len(list1), 50)]
+
+# Print the output
+for sublist in output:
+    print(sublist)
+
+
+------------------------------
+
+import pandas as pd
+
+lst1 = [1,1,1,2,2,3,3,3]
+lst2 = [1,2,3,1,2,1,2,3]
+lst3 = [5000,5250,4500,6000,5000,4500,7250,7550]
+
+
+import pandas as pd  lst1 = [1,1,1,2,2,3,3,3]  lst2 = [1,2,3,1,2,1,2,3]  lst3 = [5000,5250,4500,6000,5000,4500,7250,7550]  df = pd.DataFrame(list(zip(lst1, lst2, lst3)),columns =['EmpID' , 'Month' , 'Commission'])  df  Expected Output :  EmpID, Month, Commission  1, 3, 4500  2, 2, 5000  3, 3, 7550
+
+
+df = pd.DataFrame(list(zip(lst1, lst2, lst3)),columns =['EmpID' , 'Month' , 'Commission'])
+
+df_sorted = df.sort_values('Month', ascending=False)
+
+df_recent_month = df_sorted.drop_duplicates('EmpID')
+
+print(df_recent_month)
+--------------------------------------------------------------------------------------------------
+
+# Define the string
+s = "tteess"
+ 
+counts = {}
+print(counts)
+for char in s:
+    if char in counts:
+        counts[char] += 1
+ 
+    else:
+        counts[char] = 1
+print(counts)
+# Print the counts
+for char, count in counts.items():
+    print(f"Character '{char}': Count {count}")
+
+
+============================================================================
+
+s="HeLlO"
+def capital_indexes(s):
+    upchar_index=[]
+    for index,i in enumerate(s):
+        if i.isupper():
+            upchar_index.append(index)
+    return upchar_index
+capital_indexes(s)
+-------------------------------------------------------
+s="abc"
+def mid(s):
+    length=len(s)
+    if length%2==0:
+        return ""
+    else:
+        middle_index = length // 2
+        return s[middle_index]
+mid(s)
+
+-------------------------------------------------------
+dict=statuses = {
+    "Alice": "online",
+    "Bob": "offline",
+    "Eve": "online",
+}
+def online_count(dict):
+    count=[]
+    for i in dict.values():
+        if i=='online':
+            count.append(i)
+    return(len(count))
+    
+online_count(dict)
+--------------------------------------------------------
+def only_ints(s1,s2):
+    if type(s1) == int and type(s2) == int:
+        return True
+    else:
+        return False
+    
+only_ints("q",2)
+---------------------------------------------
+s="hello"
+def double_letters(s):
+    for i in range(len(s) - 1):
+        if s[i] == s[i + 1]:
+            return True
+    return False
+double_letters(s)
+------------------------------------------
+s="test"
+
+def add_dots(s):
+    return '.'.join(s)
+def remove_dots(s):
+    return s.replace('.', '')
+add_dots(s)
+remove_dots(s)
+remove_dots(add_dots(s))
+----------------------------------------------
+input_strings = ["hello", "world", "python"]
+unique_chars = sorted(set(char for string in input_strings for char in string))
+print(unique_chars)
+
+----------------------------------------------
+unflat_json = {'user':
+               {'Rachel':
+                {'UserID': 1717171717,
+                 'Email': 'rachel1999@gmail.com',
+                 'friends': ['John', 'Jeremy', 'Emily']
+                 }
+                }
+               }
+how to flatten the json
+----------------------------------------------------------------------
+# Define the string
+s = "tteess"
+ 
+counts = {}
+print(counts)
+for char in s:
+    if char in counts:
+        counts[char] += 1
+ 
+    else:
+        counts[char] = 1
+print(counts)
+# Print the counts
+for char, count in counts.items():
+    print(f"Character '{char}': Count {count}")
+----------------------------------------------------------------------
+import pandas as pd
+ 
+ 
+lst1 = [1,1,1,2,2,3,3,3]
+lst2 = [1,2,3,1,2,1,2,3]
+lst3 = [5000,5250,4500,6000,5000,4500,7250,7550]
+ 
+df = pd.DataFrame(list(zip(lst1, lst2, lst3)),columns =['EmpID' , 'Month' , 'Commission'])
+ 
+df_sorted = df.sort_values('Month', ascending=False)
+ 
+df_recent_month = df_sorted.drop_duplicates('EmpID')
+ 
+print(df_recent_month)
+------------------------------------------------------------------------------
+i/p	 	 
+A	B	c
+1	22	abc
+2	 	sdsds
+3	44	geeg
+4	55	 
+5	77	fsffs
+ 	 	 
+ 	 	 
+o/p	 	 
+A	B	c
+1	22	abc
+2	22	sdsds
+3	44	geeg
+4	55	geeg
+5	77	fsffs
+
+how to fill empty space
+-----------------------------------------------------------------
+df1 = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})
+df2 = pd.DataFrame({'A': [7, 8, 9], 'B': [10, 11, 12]})
+Merge output , append output
+----------------------------------------------------------------
+a = [1,2,3,4]
+b = a
+a.append(1)
+print(a)
+print(b)
+-----------------------------------
+
+Given a list of strings, write a list comprehension to create a new list that contains all the unique characters from each string, in alphabetical order.
+Example:
+Input: ["hello", "world", "python"]
+Output: ['d', 'e', 'h', 'l', 'n', 'o', 'p', 'r', 't', 'w', 'y']
+-----------------------------------------------------------------------
+
