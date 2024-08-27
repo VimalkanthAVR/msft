@@ -1,0 +1,11 @@
+git clone
+cd vtab
+git status
+git checkout -b "feature"
+git status
+git add .
+git commit -m "modified"
+git push origin feature
+
+
+git pull origin dev

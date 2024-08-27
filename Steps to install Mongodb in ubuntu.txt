@@ -1,0 +1,93 @@
+Steps to install Mongodb in ubuntu:
+
+install mongodb server:
+
+wget https://repo.mongodb.org/apt/ubuntu/dists/jammy/mongodb-org/7.0/multiverse/binary-amd64/mongodb-org-server_7.0.2_amd64.deb
+
+sudo dpkg -i mongodb-org-server_7.0.2_amd64.deb 
+sudo systemctl start mongod
+sudo systemctl status mongod
+
+sudo systemctl stop mongod
+
+sudo systemctl restart mongod
+------------------------------------------------
+Install mongosh:
+
+wget https://downloads.mongodb.com/compass/mongodb-mongosh_2.0.2_amd64.deb
+sudo dpkg -i mongodb-mongosh_2.0.2_amd64.deb
+ mongosh
+------------------------------
+wget https://fastdl.mongodb.org/tools/db/mongodb-database-tools-ubuntu2004-x86_64-100.8.0.tgz
+
+sudo dpkg -i mongodb-database-tools-ubuntu2004-x86_64-100.8.0.tar
+
+gunzip mongodb-database-tools-ubuntu2004-x86_64-100.8.0.tgz
+
+--------------------------------
+replSetName: "rs1"
+
+
+127.0.0.1,10.173.97.17
+
+127.0.0.1,10.173.97.16
+
+127.0.0.1,10.173.97.15
+
+vm-zee5-dev-ci1-csvcmongo-0002= 10.173.97.17
+
+vm-zee5-dev-ci1-csvcmongo-0003= 10.173.97.16
+                                               scp "Keyfile" bdsuser@10.173.97.16:/home
+vm-zee5-dev-ci1-csvcmongo-0004= 10.173.97.15
+
+rs.initiate()
+
+rs.add("10.173.225.11")
+
+rs.add("10.173.225.12")
+
+rs.status()
+
+db.getMongo().setReadPref('primaryPreferred')
+
+cp -r mongorestore bin/mongod
+
+--rs.slaveOk function(value) { return db.getMongo().setSlaveOk(value);}
+  db.getMongo().setReadPref('primaryPreferred')
+
+cp /home/Keyfile ../opt/mongodb
+
+sudo openssl rand -base64 741 > Keyfile
+
+sudo mkdir -p /opt/mongodb
+
+cp /home/Keyfile ../opt/mongodb
+
+--sudo cp Keyfile Document/
+
+sudo chown mongodb:mongodb /opt/mongodb/Keyfile
+
+sudo chmod 0600 /opt/mongodb/Keyfile
+
+sudo chmod 777 Keyfile  
+
+
+
+keyFile: /opt/mongodb/Keyfile
+authorization: enabled
+rs.config()
+
+rs.status()
+
+------------------------------
+
+error solve commands:
+
+
+echo "deb http://security.ubuntu.com/ubuntu focal-security main" | sudo tee /etc/apt/sources.list.d/focal-security.list
+
+sudo apt-get update
+
+sudo apt-get install libssl1.1
+
+-------------------------------------------------

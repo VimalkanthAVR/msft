@@ -1,0 +1,8 @@
+sql replace script:-
+ 
+Get-ChildItem C:\Users\dbuser2\Desktop\adtech_dev\adtech_dev *.sql -recurse |
+    Foreach-Object {
+        $c = ($_ | Get-Content) 
+        $c = $c -replace '#SET @@GLOBAL.GTID_PURGED=','-- SET @@GLOBAL.GTID_PURGED='
+        [IO.File]::WriteAllText($_.FullName, ($c -join "`r`n"))
+    }
